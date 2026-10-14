@@ -45,36 +45,55 @@ const io = new IntersectionObserver(entries => {
 sections.forEach(s => s && io.observe(s));
 
 // ---------- Contact form ----------
+
+ // ---------- Contact form ----------
 const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  status.className = 'min-h-[1.25rem] text-sm text-slate-400';
-  if (!form.checkValidity()) {
-    status.className = 'min-h-[1.25rem] text-sm text-red-400';
-    status.textContent = 'Please fill in your name, a valid email and a message.';
-    return;
-  }
-  const submitBtn = form.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  status.textContent = 'Sending...';
-  try {
-    const res = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString(),
-    });
-    if (!res.ok) throw new Error('Request failed');
-    form.reset();
-    status.className = 'min-h-[1.25rem] text-sm text-accent';
-    status.textContent = "Message sent. I'll get back to you soon.";
-  } catch (err) {
-    status.className = 'min-h-[1.25rem] text-sm text-red-400';
-    status.textContent = 'Could not send. Email me directly at your.email@example.com.';
-  } finally {
-    submitBtn.disabled = false;
-  }
-});
+if (form && status) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    status.className = 'min-h-[1.25rem] text-sm text-slate-400';
+
+    if (!form.checkValidity()) {
+      status.className = 'min-h-[1.25rem] text-sm text-red-400';
+      status.textContent = 'Please fill in your name, a valid email and a message.';
+      form.reportValidity();
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    status.textContent = 'Sending...';
+
+    try {
+      const res = await fetch('https://formsubmit.app/f/ed2g6y7sft', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || result.ok !== true) {
+        throw new Error('Message submission failed');
+      }
+
+      form.reset();
+      status.className = 'min-h-[1.25rem] text-sm text-accent';
+      status.textContent = "Message sent successfully! I'll get back to you soon.";
+
+    } catch (err) {
+      status.className = 'min-h-[1.25rem] text-sm text-red-400';
+      status.textContent = 'Could not send. Please try again or email me directly at kalsoomnazar44@gmail.com.';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+}
+
 
 document.getElementById('year').textContent = new Date().getFullYear();
