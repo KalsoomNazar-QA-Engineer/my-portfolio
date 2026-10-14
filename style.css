@@ -1,0 +1,10 @@
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } * { transition: none !important; } }
+section[id] { scroll-margin-top: 4.5rem; }
+.grid-bg {
+  background-image: radial-gradient(rgba(242,235,221,.10) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 30% 30%, #000 30%, transparent 75%);
+}
+.caret { display:inline-block; width:.55ch; height:1em; background:#FF6B3D; vertical-align:-2px; animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kalsoom | Frontend Developer</title>
+  <meta name="description" content="Frontend Developer crafting clean, responsive and user-first web experiences." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&lt;/&gt;</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-slate-900 font-sans text-slate-300 antialiased selection:bg-accent selection:text-slate-900">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-900/85 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5" aria-label="Main">
+      <a href="#home" class="font-mono text-lg font-medium text-white">
+        <span class="text-accent">&lt;</span>Kalsoom Nazar<span class="text-accent">/&gt;</span>
+      </a>
+
+      <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <li><a class="nav-link transition hover:text-white" href="#home">Home</a></li>
+        <li><a class="nav-link transition hover:text-white" href="#skills">Skills</a></li>
+        <li><a class="nav-link transition hover:text-white" href="#projects">Projects</a></li>
+        <li><a href="#contact" class="rounded-lg bg-accent px-4 py-2 font-semibold text-slate-900 transition hover:bg-accent-dark">Contact</a></li>
+      </ul>
+
+      <button id="menu-btn" class="rounded-md p-2 text-slate-200 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-slate-800 bg-slate-900 md:hidden">
+      <ul class="mx-auto flex max-w-6xl flex-col px-5 py-3 text-base font-medium">
+        <li><a class="block rounded-md px-3 py-3 hover:bg-slate-800 hover:text-white" href="#home">Home</a></li>
+        <li><a class="block rounded-md px-3 py-3 hover:bg-slate-800 hover:text-white" href="#skills">Skills</a></li>
+        <li><a class="block rounded-md px-3 py-3 hover:bg-slate-800 hover:text-white" href="#projects">Projects</a></li>
+        <li><a class="block rounded-md px-3 py-3 hover:bg-slate-800 hover:text-white" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="grid-bg pointer-events-none absolute inset-0"></div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:py-28 lg:grid-cols-[1.15fr_1fr]">
+        <div>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/60 px-3 py-1 text-sm text-slate-300">
+            <span class="h-2 w-2 rounded-full bg-accent"></span> Open to FRONTEND & QA roles
+          </p>
+          <h1 class="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl">Kalsoom Nazar</h1>
+          <p class="mt-5 text-xl font-semibold text-accent sm:text-2xl">
+            Frontend Developer | Crafting Clean, Responsive &amp; User-First Web Experiences
+          </p>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+            Passionate about turning UI/UX designs into pixel-perfect, interactive web code. Specialized in building fast-loading applications with modern frontend technologies.
+          </p>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href="#projects" class="rounded-lg bg-accent px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-accent-dark">View My Work</a>
+            <a href="#contact" class="rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white transition hover:border-accent hover:text-accent">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Code window -->
+        <div class="hidden rounded-xl border border-slate-700 bg-slate-950/80 shadow-2xl shadow-black/40 lg:block" aria-hidden="true">
+          <div class="flex items-center gap-2 border-b border-slate-800 px-4 py-3">
+            <span class="h-3 w-3 rounded-full bg-slate-700"></span><span class="h-3 w-3 rounded-full bg-slate-700"></span><span class="h-3 w-3 rounded-full bg-slate-700"></span>
+            <span class="ml-3 font-mono text-xs text-slate-500">developer.js</span>
+          </div>
+          <pre class="overflow-x-auto p-5 font-mono text-sm leading-7"><code><span class="text-sky-400">const</span> <span class="text-white">developer</span> = {
+  <span class="text-slate-400">role</span>:   <span class="text-accent">"Frontend Developer"</span>,
+  <span class="text-slate-400">stack</span>:  [<span class="text-accent">"HTML5"</span>, <span class="text-accent">"CSS3"</span>, <span class="text-accent">"JS"</span>,
+           <span class="text-accent">"Tailwind"</span>, <span class="text-accent">"React"</span>],
+  <span class="text-slate-400">focus</span>:  <span class="text-accent">"pixel-perfect UI"</span>,
+  <span class="text-slate-400">ready</span>:  <span class="text-sky-400">true</span>,
+};<span class="caret ml-1"></span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="border-t border-slate-800 bg-slate-950/40 py-20 sm:py-24">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-3xl font-bold text-white sm:text-4xl">Tech stack</h2>
+        <p class="mt-3 max-w-xl text-slate-400">The tools I use every day to build interfaces that are fast, accessible and easy to maintain.</p>
+
+        <div id="skills-grid" class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+       <!-- PROJECTS -->
+    <section id="projects" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-3xl font-bold text-white sm:text-4xl">Featured projects</h2>
+        <p class="mt-3 max-w-xl text-slate-400">A selection of work that shows how I handle layout, logic and design detail.</p>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Project 1 -->
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-800/40 transition hover:border-accent/50 hover:shadow-xl hover:shadow-emerald-500/5">
+            <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="organic.png" alt="Screenshot of the Bootstrap landing page project" class="h-full w-full object-cover object-top" onerror="this.style.display='none'" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-xl font-semibold text-white">Bootstrap Landing Page</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-slate-400">A responsive landing page built with Bootstrap, with a clean layout that adapts smoothly from mobile to desktop.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-300">
+                <span class="rounded bg-slate-700/60 px-2 py-1">HTML5</span><span class="rounded bg-slate-700/60 px-2 py-1">CSS3</span><span class="rounded bg-slate-700/60 px-2 py-1">Bootstrap</span><span class="rounded bg-slate-700/60 px-2 py-1">Responsive</span>
+              </div>
+              <div class="mt-6 grid grid-cols-2 gap-3">
+                <a href="https://kalsoom-nazar.github.io/bootstrap-landing-page/" target="_blank" rel="noopener" class="rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-accent-dark">Live Demo</a>
+                <a href="https://github.com/Kalsoom-Nazar/bootstrap-landing-page" target="_blank" rel="noopener" class="rounded-lg border border-slate-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:border-accent hover:text-accent">View Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-800/40 transition hover:border-accent/50 hover:shadow-xl hover:shadow-emerald-500/5">
+            <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="snipo.png" alt="Screenshot of the SNIPPO landing page project" class="h-full w-full object-cover object-top" onerror="this.style.display='none'" />
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-xl font-semibold text-white">SNIPPO Landing Page</h3>
+              <p class="mt-3 flex-1 leading-relaxed text-slate-400">A responsive animated landing page built with HTML and CSS, featuring smooth scroll animations and hover effects.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-300">
+                <span class="rounded bg-slate-700/60 px-2 py-1">HTML5</span><span class="rounded bg-slate-700/60 px-2 py-1">CSS3</span><span class="rounded bg-slate-700/60 px-2 py-1">Animations</span><span class="rounded bg-slate-700/60 px-2 py-1">Responsive</span>
+              </div>
+              <div class="mt-6 grid grid-cols-2 gap-3">
+                <a href="https://kalsoom-nazar.github.io/Landing-page-snipo/" target="_blank" rel="noopener" class="rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-accent-dark">Live Demo</a>
+                <a href="https://github.com/Kalsoom-Nazar/Landing-page-snipo" target="_blank" rel="noopener" class="rounded-lg border border-slate-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:border-accent hover:text-accent">View Code</a>
+              </div>
+            </div>
+          </article>
+
+        <!-- Project 3 -->
+<article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-800/40 transition hover:border-accent/50 hover:shadow-xl hover:shadow-emerald-500/5 md:col-span-2 lg:col-span-1">
+  <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900">
+    <img src="github2.png" alt="Screenshot of my third project" class="h-full w-full object-cover object-top" onerror="this.style.display='none'" />
+  </div>
+  <div class="flex flex-1 flex-col p-6">
+    <h3 class="text-xl font-semibold text-white">QA projects</h3>
+    <p class="mt-3 flex-1 leading-relaxed text-slate-400">Besides building interfaces, I test them. My QA work lives in its own GitHub profile, so you can see how I plan, run and report testing.</p>
+    <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-300">
+      <span class="rounded bg-slate-700/60 px-2 py-1">SDLC & STLC</span><span class="rounded bg-slate-700/60 px-2 py-1">Test Cases</span><span class="rounded bg-slate-700/60 px-2 py-1">Bug Reports</span>
+    </div>
+    <div class="mt-6 grid grid-cols-2 gap-3">
+      <a href="https://github.com/KalsoomNazar-QA-Engineer" target="_blank" rel="noopener" class="rounded-lg bg-accent px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-accent-dark">Live Demo</a>
+      <a href="https://github.com/KalsoomNazar-QA-Engineer/qa-manual-testing-portfolio" target="_blank" rel="noopener" class="rounded-lg border border-slate-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:border-accent hover:text-accent">Repository</a>
+    </div>
+  </div>
+</article>
+
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="border-t border-slate-800 bg-slate-950/40 py-20 sm:py-24">
+      <div class="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">Let's work together</h2>
+          <p class="mt-4 max-w-md text-slate-400">I'm looking for a frontend role where I can ship real interfaces and keep learning. Send me a message and I'll reply within a day.</p>
+
+          <ul class="mt-8 space-y-4">
+            <li>
+              <a href="mailto:your.email@example.com" class="flex items-center gap-4 text-slate-200 transition hover:text-accent">
+                <span class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-800">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </span>
+                kalsoomnazar44@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kalsoom-nazar/" target="_blank" rel="noopener" class="flex items-center gap-4 text-slate-200 transition hover:text-accent">
+                <span class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-800">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.54h.05c.53-1 1.82-2.04 3.75-2.04 4 0 4.75 2.63 4.75 6.05V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4V9.75Z"/></svg>
+                </span>
+                linkedin.com/in/Kalsoom-nazar
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/KalsoomNazar-QA-Engineer" target="_blank" rel="noopener" class="flex items-center gap-4 text-slate-200 transition hover:text-accent">
+                <span class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 bg-slate-800">
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                </span>
+                github.com/KalsoomNazar
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Works with Netlify Forms out of the box (name + data-netlify) -->
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5 rounded-2xl border border-slate-800 bg-slate-800/40 p-6 sm:p-8" novalidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden"><label>Leave this empty: <input name="bot-field" /></label></p>
+
+          <div>
+            <label for="name" class="mb-2 block text-sm font-medium text-slate-200">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Enter Your Name" class="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white placeholder-slate-500 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30" />
+          </div>
+          <div>
+            <label for="email" class="mb-2 block text-sm font-medium text-slate-200">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="kalsoomnazar44@gmail.com" class="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white placeholder-slate-500 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30" />
+          </div>
+          <div>
+            <label for="message" class="mb-2 block text-sm font-medium text-slate-200">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about the role or project" class="w-full resize-y rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-white placeholder-slate-500 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"></textarea>
+          </div>
+
+          <button type="submit" class="w-full rounded-lg bg-accent px-6 py-3 font-semibold text-slate-900 transition hover:bg-accent-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">Send Message</button>
+          <p id="form-status" class="min-h-[1.25rem] text-sm" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+    &copy; <span id="year"></span> Kalsoom Nazar. 
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
